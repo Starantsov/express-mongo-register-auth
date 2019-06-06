@@ -1,0 +1,23 @@
+extends layout 
+
+block content
+
+    section.page-greeting
+        h1.page-greeting__header Enter information here to register your account
+        form(action='/register', method='POST', class="registerForm")
+            fieldset(name='baseInfo')
+                legend.visually-hidden Create new account
+                .form-group
+                    label
+                        | - Full name:
+                        input(type='text', name='name', required)
+                    label
+                        | - Email:
+                        input(type="email", name="email",required)
+                    label
+                        | - Password
+                        input(type="password", name="password",required)
+                    label
+                        | - Confirm Password
+                        input(type="password", name="checkPassword",required)
+                button(type="submit") <  Submit  >

@@ -1,0 +1,21 @@
+header.page-header
+  nav.page-header__navigation
+    a(href='/')
+      img.page-header__logo(src='./public/images/logo.svg', alt='Logo')
+    ul.page-header__navList
+      a.page-header__navItem(href='/register')
+        li Register
+      a.page-header__navItem(href='#')
+        li Profile
+      .page-header__themeChoose
+        a.page-header__navItem.page-header__btnToggle(href='#') Theme
+        ul.page-header__toggle.no--js
+          li.page-header__navItem Dark
+          li.page-header__navItem Light
+    .page-header__profile
+      if currentUser
+        p.username #{uname}
+        img.avatar(src='/public/images/avatar.png', alt='avatar')
+        a(href='/logout', class='page-header__navItem page-header__signinBtn', style="background-color:red;") Log out
+      else 
+        a(href='/sign', class='page-header__navItem page-header__signinBtn') Sign in
